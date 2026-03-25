@@ -179,13 +179,13 @@ export default function BrandsPage() {
       </nav>
 
       {/* Common Intro */}
-      <section className="py-24 max-md:py-14 text-center">
+      <section className="py-20 max-md:py-14 text-center">
         <div className="max-w-[1200px] mx-auto px-6">
           <FadeUp>
-            <span className="inline-block text-xs font-bold tracking-widest text-[var(--color-primary)] uppercase mb-3">
+            <span className="inline-block text-sm font-semibold text-[var(--color-primary)] bg-[var(--color-primary-light)] px-4 py-1.5 rounded-full mb-4 tracking-wide">
               Global Brands
             </span>
-            <h2 className="text-[40px] max-md:text-[26px] font-extrabold mb-5">
+            <h2 className="text-4xl max-md:text-[26px] font-extrabold mb-4">
               세계 5대 보청기 브랜드
             </h2>
             <p className="text-[17px] text-gray-500 max-w-[700px] mx-auto leading-relaxed">
@@ -200,14 +200,14 @@ export default function BrandsPage() {
         <section
           key={brand.id}
           id={brand.id}
-          className={`py-24 max-md:py-14 scroll-mt-[calc(var(--header-h)+56px)] ${
+          className={`py-20 max-md:py-14 scroll-mt-[calc(var(--header-h)+56px)] ${
             idx % 2 === 0 ? "bg-white" : "bg-gray-50"
           }`}
         >
           <div className="max-w-[1200px] mx-auto px-6">
             {/* Brand Header */}
             <FadeUp>
-              <div className="flex flex-col md:flex-row md:items-center gap-6 mb-12 pb-8 border-b-2 border-gray-200">
+              <div className="flex flex-col md:flex-row md:items-center gap-6 mb-10 pb-8 border-b border-gray-200">
                 <div className="relative h-14 w-[180px] flex-shrink-0">
                   <Image
                     src={brand.logo}
@@ -217,7 +217,7 @@ export default function BrandsPage() {
                   />
                 </div>
                 <div className="flex items-center gap-3 flex-1">
-                  <div className="relative w-8 h-6 overflow-hidden flex-shrink-0 shadow-sm border border-gray-200">
+                  <div className="relative w-8 h-6 rounded-sm overflow-hidden flex-shrink-0 shadow-sm">
                     <Image
                       src={brand.flag}
                       alt={`${brand.country} 국기`}
@@ -235,7 +235,7 @@ export default function BrandsPage() {
 
             {/* Brand Description */}
             <FadeUp>
-              <p className="text-[16px] text-gray-600 leading-relaxed mb-14 max-w-[900px]">
+              <p className="text-[16px] text-gray-600 leading-relaxed mb-12 max-w-[900px]">
                 {brand.desc}
               </p>
             </FadeUp>
@@ -244,11 +244,11 @@ export default function BrandsPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {brand.products.map((product) => (
                 <FadeUp key={product.name}>
-                  <div className="product-card bg-white border border-gray-200 shadow-[0_2px_12px_rgba(0,0,0,0.06)] overflow-hidden hover:-translate-y-1 transition-transform">
+                  <div className="product-card bg-white rounded-2xl border border-gray-100 shadow-md overflow-hidden hover:-translate-y-1 transition-transform">
                     {/* Badge */}
                     <div className="px-6 pt-6">
                       <span
-                        className={`inline-block text-xs font-bold px-3 py-1 rounded-sm mb-4 ${
+                        className={`inline-block text-xs font-bold px-3 py-1 rounded-full mb-4 ${
                           product.badgeType === "new"
                             ? "bg-[var(--color-primary)] text-white"
                             : "bg-[var(--color-gold)] text-white"
@@ -273,12 +273,12 @@ export default function BrandsPage() {
                       <h3 className="text-xl font-extrabold text-gray-900 mb-2">
                         {product.name}
                       </h3>
-                      <p className="text-[14px] text-gray-500 leading-relaxed mb-5">
+                      <p className="text-[14px] text-gray-500 leading-relaxed mb-4">
                         {product.desc}
                       </p>
 
                       {/* Features */}
-                      <ul className="space-y-2.5">
+                      <ul className="space-y-2">
                         {product.features.map((feature) => (
                           <li key={feature} className="flex items-start gap-2.5 text-[14px] text-gray-600">
                             <svg

@@ -130,21 +130,22 @@ export default function ServicesSlider() {
           {services.map((s) => (
             <div
               key={s.num}
-              className="group relative bg-white rounded-none overflow-hidden border border-gray-200 border-l-[3px] border-l-[var(--color-primary)] hover:-translate-y-1 transition-all duration-500"
+              className="group relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-1.5 border-l-4 border-l-transparent hover:border-l-[var(--color-primary)]"
               style={{
                 minWidth: `calc(${slideWidth}% - ${isMobile ? "0px" : "12px"})`,
                 flexShrink: 0,
               }}
             >
               {/* Image */}
-              <div className="relative h-[240px] overflow-hidden">
+              <div className="relative h-[240px] overflow-hidden rounded-b-none">
                 <Image
                   src={s.img}
                   alt={s.title}
                   width={600}
                   height={240}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
+                {/* Gradient overlay at bottom of image */}
                 <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/20 to-transparent" />
               </div>
 
@@ -152,15 +153,20 @@ export default function ServicesSlider() {
               <div className="p-7">
                 {/* Step label */}
                 <div className="flex items-center gap-3 mb-4">
-                  {/* Square number badge */}
-                  <span className="inline-flex items-center justify-center w-10 h-10 rounded-none bg-[var(--color-primary)] text-white text-sm font-bold">
+                  {/* Gradient number badge */}
+                  <span
+                    className="inline-flex items-center justify-center w-10 h-10 rounded-xl text-white text-sm font-bold shadow-lg"
+                    style={{
+                      background: "linear-gradient(135deg, var(--color-primary), var(--color-primary-light-accent, #60a5fa))",
+                    }}
+                  >
                     {String(s.num).padStart(2, "0")}
                   </span>
                   <span className="text-xs font-semibold tracking-widest uppercase text-gray-400">
                     Step {String(s.num).padStart(2, "0")}
                   </span>
                 </div>
-                <h3 className="text-[1.2rem] font-bold mb-2 text-gray-900 leading-snug tracking-tight">
+                <h3 className="text-[1.15rem] font-bold mb-2 text-gray-900 leading-snug">
                   {s.title}
                 </h3>
                 <p className="text-[15px] text-gray-500 leading-relaxed">
@@ -178,7 +184,7 @@ export default function ServicesSlider() {
         <button
           onClick={() => goTo(idx - 1)}
           aria-label="이전"
-          className="w-11 h-11 rounded-none border border-gray-300 text-gray-600 flex items-center justify-center text-lg hover:bg-[var(--color-primary)] hover:text-white hover:border-[var(--color-primary)] transition-all duration-300"
+          className="w-11 h-11 rounded-full bg-[var(--color-primary-light)] text-[var(--color-primary)] flex items-center justify-center text-lg hover:bg-[var(--color-primary)] hover:text-white transition-all duration-300 hover:scale-110"
         >
           &#10094;
         </button>
@@ -190,7 +196,7 @@ export default function ServicesSlider() {
               key={i}
               onClick={() => goTo(i)}
               aria-label={`슬라이드 ${i + 1}`}
-              className="relative h-2 overflow-hidden transition-all duration-300"
+              className="relative h-2.5 rounded-full overflow-hidden transition-all duration-300"
               style={{
                 width: idx === i ? 32 : 10,
                 backgroundColor: idx === i ? "transparent" : "#d1d5db",
@@ -200,12 +206,12 @@ export default function ServicesSlider() {
                 <>
                   {/* Background track */}
                   <span
-                    className="absolute inset-0"
+                    className="absolute inset-0 rounded-full"
                     style={{ backgroundColor: "var(--color-primary)", opacity: 0.25 }}
                   />
                   {/* Fill bar */}
                   <span
-                    className="absolute inset-y-0 left-0"
+                    className="absolute inset-y-0 left-0 rounded-full"
                     style={{
                       width: `${progress * 100}%`,
                       backgroundColor: "var(--color-primary)",
@@ -222,7 +228,7 @@ export default function ServicesSlider() {
         <button
           onClick={() => goTo(idx + 1)}
           aria-label="다음"
-          className="w-11 h-11 rounded-none border border-gray-300 text-gray-600 flex items-center justify-center text-lg hover:bg-[var(--color-primary)] hover:text-white hover:border-[var(--color-primary)] transition-all duration-300"
+          className="w-11 h-11 rounded-full bg-[var(--color-primary-light)] text-[var(--color-primary)] flex items-center justify-center text-lg hover:bg-[var(--color-primary)] hover:text-white transition-all duration-300 hover:scale-110"
         >
           &#10095;
         </button>
