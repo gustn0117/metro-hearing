@@ -123,16 +123,16 @@ export default function HearingPage() {
         className="sticky bg-white border-b border-gray-200 z-40 shadow-sm"
         style={{ top: "var(--header-h)" }}
       >
-        <div className="max-w-6xl mx-auto px-6 flex gap-8">
+        <div className="max-w-[1200px] mx-auto px-6 flex gap-0">
           <a
             href="#necessity"
-            className="sub-nav-item py-4 text-sm font-semibold text-gray-600 whitespace-nowrap"
+            className="sub-nav-item px-6 py-4 text-[15px] font-semibold text-gray-600 whitespace-nowrap"
           >
             보청기의 필요성
           </a>
           <a
             href="#types"
-            className="sub-nav-item py-4 text-sm font-semibold text-gray-600 whitespace-nowrap"
+            className="sub-nav-item px-6 py-4 text-[15px] font-semibold text-gray-600 whitespace-nowrap"
           >
             보청기의 종류
           </a>
@@ -140,12 +140,12 @@ export default function HearingPage() {
       </nav>
 
       {/* Section 1: 보청기의 필요성 */}
-      <section id="necessity" className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
+      <section id="necessity" className="py-28 max-md:py-16 bg-white">
+        <div className="max-w-[1200px] mx-auto px-6">
           <FadeUp>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
               {/* Left: Image */}
-              <div className="relative h-[360px] rounded-2xl overflow-hidden shadow-lg">
+              <div className="relative h-[380px] overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.1)]">
                 <Image
                   src="/images/hearing/necessity1.jpg"
                   alt="보청기의 필요성"
@@ -156,15 +156,15 @@ export default function HearingPage() {
 
               {/* Right: Text */}
               <div>
-                <span className="inline-block text-xs font-bold tracking-widest text-[var(--color-primary)] uppercase mb-4">
+                <span className="inline-block text-xs font-bold tracking-widest text-[var(--color-primary)] uppercase mb-3">
                   Why You Need It
                 </span>
-                <h2 className="text-3xl font-extrabold text-gray-900 mb-6 leading-tight">
+                <h2 className="text-[36px] max-md:text-2xl font-extrabold text-gray-900 mb-8 leading-tight">
                   청력 저하는 자연적으로
                   <br />
                   회복되기 어렵습니다.
                 </h2>
-                <div className="space-y-4 text-gray-600 leading-relaxed">
+                <div className="space-y-5 text-gray-600 leading-relaxed">
                   <p>
                     난청은 대부분 감각신경성으로, 한번 손상된 청각 세포는 자연 회복이 불가능합니다.
                     많은 분들이 &lsquo;시간이 지나면 좋아지겠지&rsquo;라고 생각하지만, 방치할수록
@@ -188,11 +188,11 @@ export default function HearingPage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {necessityCards.map((card, i) => (
               <FadeUp key={card.title} className={`delay-[${i * 100}ms]`}>
-                <div className="bg-white rounded-2xl shadow-md p-6 text-center h-full flex flex-col items-center gap-4 hover:shadow-lg transition-shadow">
-                  <div className="w-16 h-16 rounded-full bg-[var(--color-primary-light)] text-[var(--color-primary)] flex items-center justify-center flex-shrink-0">
+                <div className="bg-white border border-gray-200 shadow-[0_2px_12px_rgba(0,0,0,0.06)] p-7 text-center h-full flex flex-col items-center gap-5 hover:shadow-[0_4px_20px_rgba(0,0,0,0.1)] transition-shadow">
+                  <div className="w-16 h-16 bg-[var(--color-primary-light)] text-[var(--color-primary)] flex items-center justify-center flex-shrink-0">
                     {card.icon}
                   </div>
-                  <h3 className="font-bold text-gray-900 text-base">{card.title}</h3>
+                  <h3 className="font-bold text-gray-900 text-[17px]">{card.title}</h3>
                   <p className="text-sm text-gray-500 leading-relaxed">{card.desc}</p>
                 </div>
               </FadeUp>
@@ -202,14 +202,14 @@ export default function HearingPage() {
       </section>
 
       {/* Section 2: 보청기의 종류 */}
-      <section id="types" className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6">
+      <section id="types" className="py-28 max-md:py-16 bg-gray-50">
+        <div className="max-w-[1200px] mx-auto px-6">
           <FadeUp>
-            <div className="text-center mb-14">
-              <span className="inline-block text-xs font-bold tracking-widest text-[var(--color-primary)] uppercase mb-4">
+            <div className="text-center mb-16">
+              <span className="inline-block text-xs font-bold tracking-widest text-[var(--color-primary)] uppercase mb-3">
                 Types of Hearing Aids
               </span>
-              <h2 className="text-3xl font-extrabold text-gray-900 mb-4">보청기의 종류</h2>
+              <h2 className="text-[36px] max-md:text-2xl font-extrabold text-gray-900 mb-4">보청기의 종류</h2>
               <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed">
                 보청기 선택은 청력검사 후 전문가의 상담을 통해 결정하는 것이 가장 중요합니다.
               </p>
@@ -218,17 +218,17 @@ export default function HearingPage() {
 
           {/* 귓속형 */}
           <FadeUp>
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-1 h-7 rounded-full bg-[var(--color-primary)]" />
-              <h3 className="text-xl font-extrabold text-gray-900">귓속형 보청기</h3>
+            <div className="flex items-center gap-4 mb-10">
+              <div className="w-[3px] h-8 bg-[var(--color-primary)]" />
+              <h3 className="text-[22px] font-extrabold text-gray-900">귓속형 보청기</h3>
             </div>
           </FadeUp>
 
-          <div className="flex flex-col gap-6 mb-14">
-            {inEarTypes.map((type, i) => (
+          <div className="flex flex-col gap-6 mb-16">
+            {inEarTypes.map((type) => (
               <FadeUp key={type.id}>
-                <div className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row gap-6 p-6 items-start sm:items-center">
-                  <div className="relative w-[200px] h-[200px] flex-shrink-0 rounded-xl overflow-hidden bg-gray-100 mx-auto sm:mx-0">
+                <div className="bg-white border border-gray-200 shadow-[0_2px_8px_rgba(0,0,0,0.05)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)] transition-shadow flex flex-col sm:flex-row gap-6 p-6 items-start sm:items-center">
+                  <div className="relative w-[200px] h-[200px] flex-shrink-0 overflow-hidden bg-gray-100 mx-auto sm:mx-0">
                     <Image
                       src={type.image}
                       alt={type.name}
@@ -240,10 +240,10 @@ export default function HearingPage() {
                     <h4 className="text-lg font-extrabold text-[var(--color-primary)] mb-4">
                       {type.name}
                     </h4>
-                    <ul className="space-y-2">
+                    <ul className="space-y-2.5">
                       {type.features.map((feature) => (
-                        <li key={feature} className="flex items-start gap-2 text-sm text-gray-600">
-                          <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] flex-shrink-0" />
+                        <li key={feature} className="flex items-start gap-2.5 text-[15px] text-gray-600">
+                          <span className="mt-2 w-1.5 h-1.5 bg-[var(--color-primary)] flex-shrink-0" />
                           {feature}
                         </li>
                       ))}
@@ -256,17 +256,17 @@ export default function HearingPage() {
 
           {/* 귀걸이형 */}
           <FadeUp>
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-1 h-7 rounded-full bg-[var(--color-primary)]" />
-              <h3 className="text-xl font-extrabold text-gray-900">귀걸이형 보청기</h3>
+            <div className="flex items-center gap-4 mb-10">
+              <div className="w-[3px] h-8 bg-[var(--color-primary)]" />
+              <h3 className="text-[22px] font-extrabold text-gray-900">귀걸이형 보청기</h3>
             </div>
           </FadeUp>
 
           <div className="flex flex-col gap-6">
             {behindEarTypes.map((type) => (
               <FadeUp key={type.id}>
-                <div className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row gap-6 p-6 items-start sm:items-center">
-                  <div className="relative w-[200px] h-[200px] flex-shrink-0 rounded-xl overflow-hidden bg-gray-100 mx-auto sm:mx-0">
+                <div className="bg-white border border-gray-200 shadow-[0_2px_8px_rgba(0,0,0,0.05)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)] transition-shadow flex flex-col sm:flex-row gap-6 p-6 items-start sm:items-center">
+                  <div className="relative w-[200px] h-[200px] flex-shrink-0 overflow-hidden bg-gray-100 mx-auto sm:mx-0">
                     <Image
                       src={type.image}
                       alt={type.name}
@@ -278,10 +278,10 @@ export default function HearingPage() {
                     <h4 className="text-lg font-extrabold text-[var(--color-primary)] mb-4">
                       {type.name}
                     </h4>
-                    <ul className="space-y-2">
+                    <ul className="space-y-2.5">
                       {type.features.map((feature) => (
-                        <li key={feature} className="flex items-start gap-2 text-sm text-gray-600">
-                          <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] flex-shrink-0" />
+                        <li key={feature} className="flex items-start gap-2.5 text-[15px] text-gray-600">
+                          <span className="mt-2 w-1.5 h-1.5 bg-[var(--color-primary)] flex-shrink-0" />
                           {feature}
                         </li>
                       ))}
@@ -296,14 +296,14 @@ export default function HearingPage() {
 
       {/* CTA Bar */}
       <section className="bg-[var(--color-primary)] py-14">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="max-w-[1200px] mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="text-white text-center sm:text-left">
             <p className="text-sm font-semibold opacity-80 mb-1">전문가 무료 상담</p>
             <h3 className="text-2xl font-extrabold">나에게 맞는 보청기가 궁금하신가요?</h3>
           </div>
           <Link
             href="tel:18009665"
-            className="inline-flex items-center gap-3 bg-white text-[var(--color-primary)] font-extrabold px-8 py-4 rounded-full shadow-lg hover:bg-gray-50 transition-colors whitespace-nowrap text-lg"
+            className="inline-flex items-center gap-3 bg-white text-[var(--color-primary)] font-extrabold px-8 py-4 rounded-sm shadow-lg hover:bg-gray-50 transition-colors whitespace-nowrap text-lg"
           >
             <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true">
               <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2z"/>

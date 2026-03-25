@@ -30,10 +30,10 @@ export default function QuickMenu() {
       {/* 카톡 문의 */}
       <a
         href="#"
-        className="quick-item group relative w-[50px] h-[50px] max-lg:w-10 max-lg:h-10 rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300 bg-[#FEE500] text-[#3C1E1E]"
+        className="quick-item group relative w-[50px] h-[50px] max-lg:w-10 max-lg:h-10 rounded-sm flex items-center justify-center border border-[#FEE500]/30 hover:scale-105 transition-all duration-300 bg-[#FEE500] text-[#3C1E1E]"
         title="카톡 문의"
       >
-        <span className="quick-label absolute bg-gray-900/90 text-white px-3 py-1.5 rounded-lg text-xs whitespace-nowrap backdrop-blur-sm after:content-[''] after:absolute after:top-1/2 after:-right-1 after:-translate-y-1/2 after:border-4 after:border-transparent after:border-l-gray-900/90">
+        <span className="quick-label absolute bg-gray-900 text-white px-3 py-1.5 rounded-none text-xs whitespace-nowrap after:content-[''] after:absolute after:top-1/2 after:-right-1 after:-translate-y-1/2 after:border-4 after:border-transparent after:border-l-gray-900">
           카톡 문의
         </span>
         <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
@@ -44,10 +44,10 @@ export default function QuickMenu() {
       {/* 네이버톡톡 */}
       <a
         href="#"
-        className="quick-item group relative w-[50px] h-[50px] max-lg:w-10 max-lg:h-10 rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300 bg-[#03C75A] text-white"
+        className="quick-item group relative w-[50px] h-[50px] max-lg:w-10 max-lg:h-10 rounded-sm flex items-center justify-center border border-[#03C75A]/30 hover:scale-105 transition-all duration-300 bg-[#03C75A] text-white"
         title="네이버톡톡"
       >
-        <span className="quick-label absolute bg-gray-900/90 text-white px-3 py-1.5 rounded-lg text-xs whitespace-nowrap backdrop-blur-sm after:content-[''] after:absolute after:top-1/2 after:-right-1 after:-translate-y-1/2 after:border-4 after:border-transparent after:border-l-gray-900/90">
+        <span className="quick-label absolute bg-gray-900 text-white px-3 py-1.5 rounded-none text-xs whitespace-nowrap after:content-[''] after:absolute after:top-1/2 after:-right-1 after:-translate-y-1/2 after:border-4 after:border-transparent after:border-l-gray-900">
           네이버톡톡
         </span>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -58,10 +58,10 @@ export default function QuickMenu() {
       {/* 전화 문의 */}
       <a
         href="tel:1800-9665"
-        className="quick-item group relative w-[50px] h-[50px] max-lg:w-10 max-lg:h-10 rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300 bg-[var(--color-primary)] text-white"
+        className="quick-item group relative w-[50px] h-[50px] max-lg:w-10 max-lg:h-10 rounded-sm flex items-center justify-center border border-[var(--color-primary)]/30 hover:scale-105 transition-all duration-300 bg-[var(--color-primary)] text-white"
         title="전화 문의"
       >
-        <span className="quick-label absolute bg-gray-900/90 text-white px-3 py-1.5 rounded-lg text-xs whitespace-nowrap backdrop-blur-sm after:content-[''] after:absolute after:top-1/2 after:-right-1 after:-translate-y-1/2 after:border-4 after:border-transparent after:border-l-gray-900/90">
+        <span className="quick-label absolute bg-gray-900 text-white px-3 py-1.5 rounded-none text-xs whitespace-nowrap after:content-[''] after:absolute after:top-1/2 after:-right-1 after:-translate-y-1/2 after:border-4 after:border-transparent after:border-l-gray-900">
           전화 문의
         </span>
         <svg
@@ -79,10 +79,10 @@ export default function QuickMenu() {
       {/* 후기 */}
       <a
         href="#"
-        className="quick-item group relative w-[50px] h-[50px] max-lg:w-10 max-lg:h-10 rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300 bg-[var(--color-gold)] text-white"
+        className="quick-item group relative w-[50px] h-[50px] max-lg:w-10 max-lg:h-10 rounded-sm flex items-center justify-center border border-[var(--color-gold)]/30 hover:scale-105 transition-all duration-300 bg-[var(--color-gold)] text-white"
         title="후기"
       >
-        <span className="quick-label absolute bg-gray-900/90 text-white px-3 py-1.5 rounded-lg text-xs whitespace-nowrap backdrop-blur-sm after:content-[''] after:absolute after:top-1/2 after:-right-1 after:-translate-y-1/2 after:border-4 after:border-transparent after:border-l-gray-900/90">
+        <span className="quick-label absolute bg-gray-900 text-white px-3 py-1.5 rounded-none text-xs whitespace-nowrap after:content-[''] after:absolute after:top-1/2 after:-right-1 after:-translate-y-1/2 after:border-4 after:border-transparent after:border-l-gray-900">
           후기
         </span>
         <svg
@@ -100,10 +100,10 @@ export default function QuickMenu() {
       {/* 블로그 */}
       <a
         href="#"
-        className="quick-item group relative w-[50px] h-[50px] max-lg:w-10 max-lg:h-10 rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300 bg-[#03C75A] text-white"
+        className="quick-item group relative w-[50px] h-[50px] max-lg:w-10 max-lg:h-10 rounded-sm flex items-center justify-center border border-[#03C75A]/30 hover:scale-105 transition-all duration-300 bg-[#03C75A] text-white"
         title="블로그"
       >
-        <span className="quick-label absolute bg-gray-900/90 text-white px-3 py-1.5 rounded-lg text-xs whitespace-nowrap backdrop-blur-sm after:content-[''] after:absolute after:top-1/2 after:-right-1 after:-translate-y-1/2 after:border-4 after:border-transparent after:border-l-gray-900/90">
+        <span className="quick-label absolute bg-gray-900 text-white px-3 py-1.5 rounded-none text-xs whitespace-nowrap after:content-[''] after:absolute after:top-1/2 after:-right-1 after:-translate-y-1/2 after:border-4 after:border-transparent after:border-l-gray-900">
           블로그
         </span>
         <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
@@ -114,7 +114,7 @@ export default function QuickMenu() {
       {/* Scroll to top */}
       <button
         onClick={scrollToTop}
-        className={`w-[50px] h-[50px] max-lg:w-10 max-lg:h-10 rounded-full flex items-center justify-center shadow-lg bg-white/90 text-gray-700 hover:bg-white hover:scale-110 hover:shadow-xl transition-all duration-300 mt-1 ${
+        className={`w-[50px] h-[50px] max-lg:w-10 max-lg:h-10 rounded-sm flex items-center justify-center bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 hover:scale-105 transition-all duration-300 mt-1 ${
           showTop
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-4 pointer-events-none"

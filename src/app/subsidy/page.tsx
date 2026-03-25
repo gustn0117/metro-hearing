@@ -96,9 +96,9 @@ function StepFlow({ steps }: { steps: typeof registrationSteps }) {
           key={step.num}
           className={`step-card relative flex-1 flex flex-col items-center text-center px-3 max-md:px-0 max-md:flex-row max-md:text-left max-md:gap-4 max-md:items-start ${!step.isLast ? "step-arrow" : ""}`}
         >
-          {/* Circle */}
+          {/* Square number */}
           <div
-            className={`w-12 h-12 rounded-full flex items-center justify-center text-white font-extrabold text-lg shrink-0 mb-3 max-md:mb-0 ${
+            className={`w-12 h-12 flex items-center justify-center text-white font-extrabold text-lg shrink-0 mb-3 max-md:mb-0 ${
               step.isLast
                 ? "bg-[var(--color-gold)]"
                 : "bg-[var(--color-primary)]"
@@ -121,7 +121,7 @@ function StepFlow({ steps }: { steps: typeof registrationSteps }) {
             )}
             <p className="text-[12px] text-gray-500 leading-relaxed">{step.desc}</p>
             {step.time && (
-              <span className="inline-block mt-1.5 text-[11px] bg-[var(--color-primary-light)] text-[var(--color-primary)] font-semibold px-2 py-0.5 rounded-full">
+              <span className="inline-block mt-1.5 text-[11px] bg-[var(--color-primary-light)] text-[var(--color-primary)] font-semibold px-2 py-0.5">
                 {step.time}
               </span>
             )}
@@ -169,21 +169,21 @@ export default function SubsidyPage() {
       </nav>
 
       {/* Section 1: 보청기 정부지원제도 */}
-      <section id="system" className="py-20 max-md:py-14">
+      <section id="system" className="py-24 max-md:py-14">
         <div className="max-w-[1200px] mx-auto px-6">
-          <FadeUp className="text-center mb-12">
-            <span className="inline-block text-sm font-semibold text-[var(--color-primary)] bg-[var(--color-primary-light)] px-4 py-1.5 rounded-full mb-4 tracking-wide">
+          <FadeUp className="text-center mb-14">
+            <span className="inline-block text-xs font-bold tracking-widest text-[var(--color-primary)] uppercase mb-3">
               Government Support
             </span>
-            <h2 className="text-3xl max-md:text-2xl font-extrabold text-gray-900">
+            <h2 className="text-[36px] max-md:text-2xl font-extrabold text-gray-900">
               보청기 정부지원제도
             </h2>
           </FadeUp>
 
           <FadeUp className="flex justify-center">
-            <div className="max-w-[800px] w-full bg-[var(--color-primary-light)] rounded-2xl p-10 max-md:p-6 text-center">
+            <div className="max-w-[800px] w-full bg-[var(--color-primary-light)] border border-[var(--color-primary)]/10 p-10 max-md:p-6 text-center">
               {/* Document icon */}
-              <div className="w-20 h-20 mx-auto mb-6 bg-white rounded-full flex items-center justify-center shadow-md">
+              <div className="w-20 h-20 mx-auto mb-6 bg-white flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.08)]">
                 <svg
                   width="38"
                   height="38"
@@ -216,7 +216,7 @@ export default function SubsidyPage() {
                 ].map((item) => (
                   <div
                     key={item.label}
-                    className="bg-white rounded-xl px-6 py-4 max-md:px-4 max-md:py-3 shadow-sm text-center min-w-[140px]"
+                    className="bg-white border border-gray-100 px-6 py-4 max-md:px-4 max-md:py-3 shadow-[0_2px_8px_rgba(0,0,0,0.06)] text-center min-w-[140px]"
                   >
                     <p className="text-[var(--color-primary)] font-extrabold text-lg max-md:text-base">
                       {item.label}
@@ -231,14 +231,14 @@ export default function SubsidyPage() {
       </section>
 
       {/* Section 2: 청각장애 등록 절차 */}
-      <section id="registration" className="py-20 max-md:py-14 bg-gray-50">
+      <section id="registration" className="py-24 max-md:py-14 bg-gray-50">
         <div className="max-w-[1200px] mx-auto px-6">
           <FadeUp>
-            <div className="border-l-4 border-[var(--color-primary)] pl-5 mb-10">
-              <span className="text-sm font-semibold text-[var(--color-primary)] tracking-wide">
+            <div className="border-l-[3px] border-[var(--color-primary)] pl-5 mb-12">
+              <span className="text-xs font-bold tracking-widest text-[var(--color-primary)] uppercase">
                 Step by Step
               </span>
-              <h2 className="text-3xl max-md:text-2xl font-extrabold text-gray-900 mt-1">
+              <h2 className="text-[36px] max-md:text-2xl font-extrabold text-gray-900 mt-1">
                 청각장애 등록 절차
               </h2>
               <p className="text-gray-500 mt-2 text-[15px]">
@@ -252,14 +252,14 @@ export default function SubsidyPage() {
       </section>
 
       {/* Section 3: 보청기 급여비 수령 절차 */}
-      <section id="claim" className="py-20 max-md:py-14">
+      <section id="claim" className="py-24 max-md:py-14">
         <div className="max-w-[1200px] mx-auto px-6">
           <FadeUp>
-            <div className="border-l-4 border-[var(--color-primary)] pl-5 mb-10">
-              <span className="text-sm font-semibold text-[var(--color-primary)] tracking-wide">
+            <div className="border-l-[3px] border-[var(--color-primary)] pl-5 mb-12">
+              <span className="text-xs font-bold tracking-widest text-[var(--color-primary)] uppercase">
                 Step by Step
               </span>
-              <h2 className="text-3xl max-md:text-2xl font-extrabold text-gray-900 mt-1">
+              <h2 className="text-[36px] max-md:text-2xl font-extrabold text-gray-900 mt-1">
                 보청기 급여비 수령 절차
               </h2>
               <p className="text-gray-500 mt-2 text-[15px]">
@@ -270,8 +270,8 @@ export default function SubsidyPage() {
             <StepFlow steps={claimSteps} />
 
             {/* Yellow info box */}
-            <div className="mt-10 bg-[#FFFBEB] border border-[var(--color-gold)] rounded-xl p-6 max-md:p-5 flex gap-4 items-start">
-              <div className="shrink-0 w-8 h-8 bg-[var(--color-gold)] rounded-full flex items-center justify-center text-white font-extrabold text-sm">
+            <div className="mt-12 bg-[#FFFBEB] border-l-[3px] border-[var(--color-gold)] p-6 max-md:p-5 flex gap-4 items-start">
+              <div className="shrink-0 w-8 h-8 bg-[var(--color-gold)] flex items-center justify-center text-white font-extrabold text-sm">
                 !
               </div>
               <div>
@@ -301,7 +301,7 @@ export default function SubsidyPage() {
             </div>
             <a
               href="tel:1800-9665"
-              className="inline-flex items-center gap-3 bg-white text-[var(--color-primary)] font-extrabold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-[var(--color-primary-light)] hover:-translate-y-0.5 transition-all shrink-0"
+              className="inline-flex items-center gap-3 bg-white text-[var(--color-primary)] font-extrabold text-lg px-8 py-4 rounded-sm shadow-lg hover:bg-[var(--color-primary-light)] hover:-translate-y-0.5 transition-all shrink-0"
             >
               <svg
                 width="22"

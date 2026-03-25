@@ -136,13 +136,13 @@ export default function CenterPage() {
       </nav>
 
       {/* Section: 소개 */}
-      <section id="intro" className="py-24 max-md:py-16">
+      <section id="intro" className="py-28 max-md:py-16">
         <div className="max-w-[1200px] mx-auto px-6">
           <FadeUp>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               {/* Left: Images */}
               <div className="grid grid-cols-2 gap-4">
-                <div className="col-span-2 rounded-2xl overflow-hidden aspect-[4/3] relative shadow-md">
+                <div className="col-span-2 overflow-hidden aspect-[4/3] relative shadow-[0_2px_12px_rgba(0,0,0,0.1)]">
                   <Image
                     src="/images/center/intro1.jpg"
                     alt="메트로 보청기 센터"
@@ -150,7 +150,7 @@ export default function CenterPage() {
                     className="object-cover"
                   />
                 </div>
-                <div className="rounded-2xl overflow-hidden aspect-square relative shadow-md">
+                <div className="overflow-hidden aspect-square relative shadow-[0_2px_12px_rgba(0,0,0,0.1)]">
                   <Image
                     src="/images/center/intro2.jpg"
                     alt="메트로 보청기 상담"
@@ -158,7 +158,7 @@ export default function CenterPage() {
                     className="object-cover"
                   />
                 </div>
-                <div className="rounded-2xl overflow-hidden aspect-square relative shadow-md">
+                <div className="overflow-hidden aspect-square relative shadow-[0_2px_12px_rgba(0,0,0,0.1)]">
                   <Image
                     src="/images/center/intro3.jpg"
                     alt="메트로 보청기 청력검사"
@@ -170,22 +170,22 @@ export default function CenterPage() {
 
               {/* Right: Content */}
               <div>
-                <span className="inline-block text-sm font-semibold text-[var(--color-primary)] bg-[var(--color-primary-light)] px-4 py-1.5 rounded-full mb-4 tracking-wide">
+                <span className="inline-block text-xs font-bold tracking-widest text-[var(--color-primary)] uppercase mb-3">
                   About Us
                 </span>
-                <h2 className="text-[32px] max-md:text-2xl font-extrabold leading-tight mb-5">
+                <h2 className="text-[36px] max-md:text-2xl font-extrabold leading-tight mb-6">
                   메트로 보청기 소개
                 </h2>
-                <p className="text-[16px] text-gray-600 leading-relaxed mb-8">
+                <p className="text-[16px] text-gray-600 leading-relaxed mb-10">
                   메트로 보청기는 대구 지하철 1·2호선 <strong className="text-gray-800">반월당역 12번 출구</strong> 앞에 위치한 청각 전문 센터입니다.
                   청능사와 청각사가 상시 상주하여 정밀 청력 검사부터 보청기 선택, 사후관리까지 전 과정을 책임지고 안내해 드립니다.
                   <br /><br />
                   국내외 주요 보청기 브랜드를 한 자리에서 비교 체험할 수 있으며, 투명한 가격 정책과 정부지원제도 안내를 통해 고객이 최적의 선택을 할 수 있도록 돕겠습니다.
                 </p>
-                <ul className="space-y-3">
+                <ul className="space-y-4">
                   {features.map((f, i) => (
-                    <li key={i} className="flex items-center gap-3">
-                      <span className="w-9 h-9 flex-shrink-0 rounded-full bg-[var(--color-primary-light)] text-[var(--color-primary)] flex items-center justify-center">
+                    <li key={i} className="flex items-center gap-4">
+                      <span className="w-10 h-10 flex-shrink-0 bg-[var(--color-primary-light)] text-[var(--color-primary)] flex items-center justify-center">
                         {f.icon}
                       </span>
                       <span className="text-[15px] font-medium text-gray-700">{f.label}</span>
@@ -199,18 +199,27 @@ export default function CenterPage() {
       </section>
 
       {/* Section: 인사말 */}
-      <section id="greeting" className="py-24 max-md:py-16 bg-gray-50">
-        <div className="max-w-[800px] mx-auto px-6 text-center">
+      <section id="greeting" className="py-28 max-md:py-16 bg-gray-50">
+        <div className="max-w-[800px] mx-auto px-6">
           <FadeUp>
-            <span className="inline-block text-sm font-semibold text-[var(--color-primary)] bg-[var(--color-primary-light)] px-4 py-1.5 rounded-full mb-4 tracking-wide">
-              Greeting
-            </span>
-            <h2 className="text-[32px] max-md:text-2xl font-extrabold mb-8">인사말</h2>
+            <div className="text-center mb-10">
+              <span className="inline-block text-xs font-bold tracking-widest text-[var(--color-primary)] uppercase mb-3">
+                Greeting
+              </span>
+              <h2 className="text-[36px] max-md:text-2xl font-extrabold">인사말</h2>
+            </div>
             <div className="relative">
-              <svg className="absolute -top-4 -left-2 opacity-10" width="60" height="60" fill="var(--color-primary)" viewBox="0 0 24 24">
-                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-              </svg>
-              <div className="bg-white rounded-2xl shadow-md p-10 max-md:p-7 text-left leading-relaxed text-gray-600 text-[16px] space-y-5">
+              {/* Left accent bar + quote card */}
+              <div className="border-l-[3px] border-[var(--color-primary)] pl-8 mb-8">
+                <svg className="opacity-15 mb-2" width="48" height="48" fill="var(--color-primary)" viewBox="0 0 24 24">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                </svg>
+                <p className="text-[17px] text-gray-500 italic leading-relaxed">
+                  청력은 한 번 잃으면 되돌리기 어려운 소중한 감각입니다.
+                </p>
+              </div>
+
+              <div className="bg-white shadow-[0_2px_16px_rgba(0,0,0,0.08)] border border-gray-100 p-10 max-md:p-7 text-left leading-relaxed text-gray-600 text-[16px] space-y-5">
                 <p>
                   안녕하십니까. 메트로 보청기 대표 <strong className="text-gray-800">홍정헌</strong>입니다.
                 </p>
@@ -227,7 +236,7 @@ export default function CenterPage() {
                   감사합니다.
                 </p>
               </div>
-              <div className="mt-6 flex flex-col items-center gap-1">
+              <div className="mt-8 flex flex-col items-center gap-1">
                 <span className="text-sm text-gray-400">메트로 보청기 대표</span>
                 <span className="text-xl font-bold text-[var(--color-primary)]">홍정헌</span>
               </div>
@@ -237,18 +246,18 @@ export default function CenterPage() {
       </section>
 
       {/* Section: 오시는 길 */}
-      <section id="location" className="py-24 max-md:py-16">
+      <section id="location" className="py-28 max-md:py-16">
         <div className="max-w-[1200px] mx-auto px-6">
           <FadeUp>
-            <div className="text-center mb-12">
-              <span className="inline-block text-sm font-semibold text-[var(--color-primary)] bg-[var(--color-primary-light)] px-4 py-1.5 rounded-full mb-4 tracking-wide">
+            <div className="text-center mb-14">
+              <span className="inline-block text-xs font-bold tracking-widest text-[var(--color-primary)] uppercase mb-3">
                 Location
               </span>
-              <h2 className="text-[32px] max-md:text-2xl font-extrabold">오시는 길</h2>
+              <h2 className="text-[36px] max-md:text-2xl font-extrabold">오시는 길</h2>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
               {/* Map */}
-              <div className="rounded-2xl overflow-hidden shadow-lg">
+              <div className="overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.1)] border border-gray-200">
                 <iframe
                   src="https://www.google.com/maps?q=대구+중구+달구벌대로+2109-18+흥국생명빌딩&output=embed"
                   className="w-full h-[420px] border-0"
@@ -259,10 +268,10 @@ export default function CenterPage() {
               </div>
 
               {/* Info */}
-              <div className="space-y-5">
+              <div className="space-y-4">
                 {infoItems.map((item, i) => (
-                  <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5">
-                    <span className="w-10 h-10 flex-shrink-0 rounded-full bg-[var(--color-primary-light)] text-[var(--color-primary)] flex items-center justify-center mt-0.5">
+                  <div key={i} className="flex items-start gap-4 bg-gray-50 border border-gray-100 p-5">
+                    <span className="w-10 h-10 flex-shrink-0 bg-[var(--color-primary-light)] text-[var(--color-primary)] flex items-center justify-center mt-0.5">
                       {item.icon}
                     </span>
                     <div>
@@ -277,7 +286,7 @@ export default function CenterPage() {
                 ))}
                 <a
                   href="tel:1800-9665"
-                  className="flex items-center justify-center gap-2.5 w-full py-4 bg-[var(--color-primary)] text-white text-base font-bold rounded-xl hover:opacity-90 transition-opacity mt-2"
+                  className="flex items-center justify-center gap-2.5 w-full py-4 bg-[var(--color-primary)] text-white text-base font-bold rounded-sm hover:opacity-90 transition-opacity mt-2"
                 >
                   <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
