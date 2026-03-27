@@ -29,7 +29,9 @@ export default function QuickMenu() {
     >
       {/* 카톡 문의 */}
       <a
-        href="#"
+        href="https://pf.kakao.com/_wnSzX/chat"
+        target="_blank"
+        rel="noopener noreferrer"
         className="quick-item group relative w-[50px] h-[50px] max-lg:w-10 max-lg:h-10 rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300 bg-[#FEE500] text-[#3C1E1E]"
         title="카톡 문의"
       >
@@ -43,7 +45,9 @@ export default function QuickMenu() {
 
       {/* 네이버톡톡 */}
       <a
-        href="#"
+        href="https://talk.naver.com/ct/wewzl7e?frm=pblog#nafullscreen"
+        target="_blank"
+        rel="noopener noreferrer"
         className="quick-item group relative w-[50px] h-[50px] max-lg:w-10 max-lg:h-10 rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300 bg-[#03C75A] text-white"
         title="네이버톡톡"
       >
@@ -78,7 +82,9 @@ export default function QuickMenu() {
 
       {/* 후기 */}
       <a
-        href="#"
+        href="https://blog.naver.com/PostList.naver?blogId=mhearing25&categoryNo=7&skinType=&skinId=&from=menu&userSelectMenu=true"
+        target="_blank"
+        rel="noopener noreferrer"
         className="quick-item group relative w-[50px] h-[50px] max-lg:w-10 max-lg:h-10 rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300 bg-[var(--color-gold)] text-white"
         title="후기"
       >
@@ -99,7 +105,9 @@ export default function QuickMenu() {
 
       {/* 블로그 */}
       <a
-        href="#"
+        href="https://blog.naver.com/mhearing25"
+        target="_blank"
+        rel="noopener noreferrer"
         className="quick-item group relative w-[50px] h-[50px] max-lg:w-10 max-lg:h-10 rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300 bg-[#03C75A] text-white"
         title="블로그"
       >

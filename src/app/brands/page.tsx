@@ -23,7 +23,7 @@ const brands = [
       {
         badge: "정부지원 모델",
         badgeType: "gov",
-        name: "Insio IX",
+        name: "Insio 7NX",
         image: "/images/brands/products/signia-insio.png",
         desc: "정부보조금 지원 대상 제품으로 뛰어난 음질과 작은 크기를 동시에 제공하는 맞춤형 보청기입니다.",
         features: ["선명하고 자연스러운 음질", "귀 안에 완전히 들어가는 작은 디자인", "다양한 쉘 색상 선택 가능"],

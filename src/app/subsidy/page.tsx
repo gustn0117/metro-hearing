@@ -5,10 +5,10 @@ import PageHero from "@/components/PageHero";
 const registrationSteps = [
   {
     num: 1,
-    title: "진단의뢰",
-    place: "주민자치센터 / 사무소",
-    desc: "가까운 주민자치센터 또는 행정복지센터를 방문하여 청각장애 진단 의뢰서를 신청합니다.",
-    time: "약 1주 ~ 1개월",
+    title: "진단 의뢰",
+    place: "보청기 센터 방문",
+    desc: "청력검사 및 보청기 상담 진행",
+    time: "",
     isLast: false,
   },
   {
@@ -205,14 +205,14 @@ export default function SubsidyPage() {
                 <strong className="text-[var(--color-primary)]">청각장애</strong>(2~6급) 복지카드를 보유하고
                 해당 분류에 보청기 구입 시,{" "}
                 <strong className="text-[var(--color-primary)]">5년에 1회</strong> 보청기 구입비를 최대{" "}
-                <strong className="text-[var(--color-primary)]">131만원</strong>까지 지원받으실 수 있는 제도입니다.
+                <strong className="text-[var(--color-primary)]">111만원</strong>까지 지원받으실 수 있는 제도입니다.
               </p>
 
               <div className="flex justify-center gap-4 max-md:gap-3 mt-8 flex-wrap">
                 {[
                   { label: "청각장애", sub: "2~6급 복지카드 보유자" },
                   { label: "5년에 1회", sub: "지원 가능" },
-                  { label: "최대 131만원", sub: "보청기 구입비 지원" },
+                  { label: "최대 111만원", sub: "보청기 구입비 지원" },
                 ].map((item) => (
                   <div
                     key={item.label}
@@ -269,20 +269,6 @@ export default function SubsidyPage() {
 
             <StepFlow steps={claimSteps} />
 
-            {/* Yellow info box */}
-            <div className="mt-10 bg-[#FFFBEB] border border-[var(--color-gold)] rounded-xl p-6 max-md:p-5 flex gap-4 items-start">
-              <div className="shrink-0 w-8 h-8 bg-[var(--color-gold)] rounded-full flex items-center justify-center text-white font-extrabold text-sm">
-                !
-              </div>
-              <div>
-                <p className="font-bold text-gray-800 mb-1">후기적립비 청구 안내</p>
-                <p className="text-[14px] text-gray-600 leading-relaxed">
-                  보청기 구입 후 <strong>1년</strong> 이내에 이비인후과 전문의에게 후기 적합관리(착용 후 확인서)를 받으시면,
-                  선택 진료비 중 일부를 추가로 청구하실 수 있습니다.
-                  후기적립비는 최대 <strong>20만 5천원</strong>까지 별도 지원되오니, 구입 후 반드시 확인하시기 바랍니다.
-                </p>
-              </div>
-            </div>
           </FadeUp>
         </div>
       </section>

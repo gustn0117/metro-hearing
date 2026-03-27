@@ -90,7 +90,7 @@ const infoItems = [
       </svg>
     ),
     label: "주차",
-    value: "건물 내 지하 주차장 이용 가능",
+    value: "건물 내 주차장 이용 가능",
   },
   {
     icon: (
@@ -148,6 +148,7 @@ export default function CenterPage() {
                     alt="메트로 보청기 센터"
                     fill
                     className="object-cover"
+                    style={{ objectPosition: "70% center" }}
                   />
                 </div>
                 <div className="rounded-2xl overflow-hidden aspect-square relative shadow-md">
@@ -178,9 +179,9 @@ export default function CenterPage() {
                 </h2>
                 <p className="text-[16px] text-gray-600 leading-relaxed mb-8">
                   메트로 보청기는 대구 지하철 1·2호선 <strong className="text-gray-800">반월당역 12번 출구</strong> 앞에 위치한 청각 전문 센터입니다.
-                  청능사와 청각사가 상시 상주하여 정밀 청력 검사부터 보청기 선택, 사후관리까지 전 과정을 책임지고 안내해 드립니다.
+                  청능사와 청각사가 상주하여 정밀 청력 검사부터 보청기 선택, 사후관리까지 전 과정을 책임지고 안내해 드립니다.
                   <br /><br />
-                  국내외 주요 보청기 브랜드를 한 자리에서 비교 체험할 수 있으며, 투명한 가격 정책과 정부지원제도 안내를 통해 고객이 최적의 선택을 할 수 있도록 돕겠습니다.
+                  세계 5대 보청기 브랜드를 한 자리에서 비교 체험할 수 있으며, 투명한 가격 정책과 정부지원제도 안내를 통해 고객이 최적의 선택을 할 수 있도록 돕겠습니다.
                 </p>
                 <ul className="space-y-3">
                   {features.map((f, i) => (
@@ -212,7 +213,7 @@ export default function CenterPage() {
               </svg>
               <div className="bg-white rounded-2xl shadow-md p-10 max-md:p-7 text-left leading-relaxed text-gray-600 text-[16px] space-y-5">
                 <p>
-                  안녕하십니까. 메트로 보청기 대표 <strong className="text-gray-800">홍정헌</strong>입니다.
+                  안녕하십니까. 메트로 보청기입니다.
                 </p>
                 <p>
                   청력은 한 번 잃으면 되돌리기 어려운 소중한 감각입니다. 소리를 제대로 듣지 못하는 불편함은 단순한 의사소통의 문제를 넘어, 가족과의 관계, 사회생활, 그리고 삶의 질 전반에 큰 영향을 미칩니다.
@@ -229,7 +230,6 @@ export default function CenterPage() {
               </div>
               <div className="mt-6 flex flex-col items-center gap-1">
                 <span className="text-sm text-gray-400">메트로 보청기 대표</span>
-                <span className="text-xl font-bold text-[var(--color-primary)]">홍정헌</span>
               </div>
             </div>
           </FadeUp>
@@ -250,7 +250,7 @@ export default function CenterPage() {
               {/* Map */}
               <div className="rounded-2xl overflow-hidden shadow-lg">
                 <iframe
-                  src="https://www.google.com/maps?q=대구+중구+달구벌대로+2109-18+흥국생명빌딩&output=embed"
+                  src="https://map.naver.com/p/entry/place/1213927754?c=15.00,0,0,0,dh&isCorrectAnswer=true"
                   className="w-full h-[420px] border-0"
                   allowFullScreen
                   loading="lazy"

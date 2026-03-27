@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const services = [
   { num: 1, title: "정부지원금 신청 가능 여부 안내", text: "청력검사 진행 후, 등급신청 가능여부 및 정부지원제도를 안내해 드립니다.", img: "/images/main/slide1.jpg" },
-  { num: 2, title: "장애진단 검사 동행", text: "장애진단이 가능한 청력대로 확인되는 경우, 청각 장애진단 검사 예약 및 검사 동행을 진행합니다.", img: "/images/main/slide2.jpg" },
+  { num: 2, title: "장애진단 검사 동행", text: "장애진단이 가능한 청력대로 확인되는 경우, 청각 장애진단 검사 예약 및 검사 동행을 진행합니다.", img: "/images/main/정부지원금1.jpg" },
   { num: 3, title: "브랜드별 체험 프로그램", text: "상담 당일 다양한 브랜드 비교 체험, 고객에게 맞는 제품 선택 후 한달 무료체험이 가능합니다.", img: "/images/main/slide3.jpg" },
   { num: 4, title: "집 방문 서비스", text: "이동이 어려운 분들을 위한 집 방문 1:1 전문 상담 서비스를 제공합니다.", img: "/images/main/slide4.png" },
 ];
@@ -21,7 +21,6 @@ export default function ServicesSlider() {
   const pointerStartX = useRef<number | null>(null);
   const pointerDelta = useRef(0);
 
-  // mobile: maxIdx = 3 (1 card visible), desktop: maxIdx = 2 (2 cards visible)
   const [isMobile, setIsMobile] = useState(false);
   const maxIdx = isMobile ? services.length - 1 : services.length - 2;
 
@@ -33,7 +32,6 @@ export default function ServicesSlider() {
     return () => mq.removeEventListener("change", handler);
   }, []);
 
-  // Clamp idx when breakpoint changes
   useEffect(() => {
     setIdx((prev) => Math.min(prev, maxIdx));
   }, [maxIdx]);
@@ -56,7 +54,6 @@ export default function ServicesSlider() {
     startTimeRef.current = 0;
   }, [maxIdx]);
 
-  // Auto-play with animated progress
   useEffect(() => {
     if (paused) {
       if (progressRef.current) cancelAnimationFrame(progressRef.current);
@@ -83,7 +80,6 @@ export default function ServicesSlider() {
     };
   }, [paused, idx, next]);
 
-  // Touch / pointer swipe
   const onPointerDown = (e: React.PointerEvent) => {
     pointerStartX.current = e.clientX;
     pointerDelta.current = 0;
@@ -113,7 +109,7 @@ export default function ServicesSlider() {
     >
       {/* Slider viewport */}
       <div
-        className="overflow-hidden"
+        className="overflow-hidden rounded-2xl"
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
@@ -130,63 +126,65 @@ export default function ServicesSlider() {
           {services.map((s) => (
             <div
               key={s.num}
-              className="group relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-1.5 border-l-4 border-l-transparent hover:border-l-[var(--color-primary)]"
+              className="group relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100/60 hover:border-[var(--color-primary)]/10"
               style={{
                 minWidth: `calc(${slideWidth}% - ${isMobile ? "0px" : "12px"})`,
                 flexShrink: 0,
               }}
             >
               {/* Image */}
-              <div className="relative h-[240px] overflow-hidden rounded-b-none">
+              <div className="relative h-[250px] overflow-hidden">
                 <Image
                   src={s.img}
                   alt={s.title}
                   width={600}
-                  height={240}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  height={250}
+                  className="w-full h-full object-cover img-zoom"
                 />
-                {/* Gradient overlay at bottom of image */}
-                <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/20 to-transparent" />
-              </div>
-
-              {/* Content */}
-              <div className="p-7">
-                {/* Step label */}
-                <div className="flex items-center gap-3 mb-4">
-                  {/* Gradient number badge */}
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
+                {/* Step number overlay */}
+                <div className="absolute top-5 left-5">
                   <span
-                    className="inline-flex items-center justify-center w-10 h-10 rounded-xl text-white text-sm font-bold shadow-lg"
+                    className="inline-flex items-center justify-center w-11 h-11 rounded-xl text-white text-sm font-bold shadow-lg backdrop-blur-sm border border-white/10"
                     style={{
-                      background: "linear-gradient(135deg, var(--color-primary), var(--color-primary-light-accent, #60a5fa))",
+                      background: "linear-gradient(135deg, var(--color-primary), var(--color-accent))",
                     }}
                   >
                     {String(s.num).padStart(2, "0")}
                   </span>
-                  <span className="text-xs font-semibold tracking-widest uppercase text-gray-400">
-                    Step {String(s.num).padStart(2, "0")}
-                  </span>
                 </div>
-                <h3 className="text-[1.15rem] font-bold mb-2 text-gray-900 leading-snug">
+              </div>
+
+              {/* Content */}
+              <div className="p-7 max-md:p-5">
+                <span className="text-[11px] font-bold tracking-[.2em] uppercase text-[var(--color-primary)]/50 mb-3 block">
+                  Step {String(s.num).padStart(2, "0")}
+                </span>
+                <h3 className="text-[1.1rem] font-bold mb-2.5 text-gray-900 leading-snug group-hover:text-[var(--color-primary)] transition-colors">
                   {s.title}
                 </h3>
-                <p className="text-[15px] text-gray-500 leading-relaxed">
+                <p className="text-[14px] text-gray-400 leading-relaxed">
                   {s.text}
                 </p>
               </div>
+
+              {/* Bottom accent line on hover */}
+              <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
             </div>
           ))}
         </div>
       </div>
 
       {/* Controls row */}
-      <div className="flex items-center justify-center gap-6 mt-8">
+      <div className="flex items-center justify-center gap-6 mt-10">
         {/* Prev button */}
         <button
           onClick={() => goTo(idx - 1)}
           aria-label="이전"
-          className="w-11 h-11 rounded-full bg-[var(--color-primary-light)] text-[var(--color-primary)] flex items-center justify-center text-lg hover:bg-[var(--color-primary)] hover:text-white transition-all duration-300 hover:scale-110"
+          className="w-11 h-11 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[var(--color-primary)] hover:text-white transition-all duration-300 hover:scale-110 border border-gray-100 hover:border-transparent"
         >
-          &#10094;
+          <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
         </button>
 
         {/* Progress dots */}
@@ -196,20 +194,18 @@ export default function ServicesSlider() {
               key={i}
               onClick={() => goTo(i)}
               aria-label={`슬라이드 ${i + 1}`}
-              className="relative h-2.5 rounded-full overflow-hidden transition-all duration-300"
+              className="relative h-2 rounded-full overflow-hidden transition-all duration-400"
               style={{
-                width: idx === i ? 32 : 10,
-                backgroundColor: idx === i ? "transparent" : "#d1d5db",
+                width: idx === i ? 36 : 8,
+                backgroundColor: idx === i ? "transparent" : "#e5e7eb",
               }}
             >
               {idx === i && (
                 <>
-                  {/* Background track */}
                   <span
                     className="absolute inset-0 rounded-full"
-                    style={{ backgroundColor: "var(--color-primary)", opacity: 0.25 }}
+                    style={{ backgroundColor: "var(--color-primary)", opacity: 0.15 }}
                   />
-                  {/* Fill bar */}
                   <span
                     className="absolute inset-y-0 left-0 rounded-full"
                     style={{
@@ -228,9 +224,9 @@ export default function ServicesSlider() {
         <button
           onClick={() => goTo(idx + 1)}
           aria-label="다음"
-          className="w-11 h-11 rounded-full bg-[var(--color-primary-light)] text-[var(--color-primary)] flex items-center justify-center text-lg hover:bg-[var(--color-primary)] hover:text-white transition-all duration-300 hover:scale-110"
+          className="w-11 h-11 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[var(--color-primary)] hover:text-white transition-all duration-300 hover:scale-110 border border-gray-100 hover:border-transparent"
         >
-          &#10095;
+          <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
         </button>
       </div>
     </div>
