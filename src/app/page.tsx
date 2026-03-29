@@ -247,7 +247,7 @@ export default function Home() {
 
             <FadeUp className="flex-1 w-full">
               <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/[.08] ring-1 ring-white/5">
-                <iframe src="https://map.naver.com/p/entry/place/1213927754?c=15.00,0,0,0,dh&isCorrectAnswer=true" className="w-full h-[400px] border-0" allowFullScreen loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps?q=대구+중구+달구벌대로+2109-18+흥국생명빌딩&output=embed" className="w-full h-[400px] border-0" allowFullScreen loading="lazy"></iframe>
               </div>
               <div className="flex items-start gap-3 mt-6 text-white/60 text-sm">
                 <svg width="18" height="18" fill="none" stroke="var(--color-gold)" strokeWidth="2" viewBox="0 0 24 24" className="flex-shrink-0 mt-0.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
