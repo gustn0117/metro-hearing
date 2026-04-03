@@ -16,6 +16,7 @@ const brands = [
         badge: "최신 제품",
         badgeType: "new",
         name: "Silk Charge&Go IX",
+        nameKo: "실크 차지앤고 IX",
         image: "/images/brands/products/signia-silk.png",
         desc: "귀 속에 완전히 들어가는 초소형 디자인으로 편리한 충전 시스템을 갖춘 시그니아의 최신 플래그십 제품입니다.",
         features: ["초소형 CIC 충전식 디자인", "지능형 소음 관리 시스템", "Integrated Xperience(IX) 플랫폼"],
@@ -24,6 +25,7 @@ const brands = [
         badge: "정부지원 모델",
         badgeType: "gov",
         name: "Insio 7NX",
+        nameKo: "인시오 7NX",
         image: "/images/brands/products/signia-insio.png",
         desc: "정부보조금 지원 대상 제품으로 뛰어난 음질과 작은 크기를 동시에 제공하는 맞춤형 보청기입니다.",
         features: ["선명하고 자연스러운 음질", "귀 안에 완전히 들어가는 작은 디자인", "다양한 쉘 색상 선택 가능"],
@@ -43,6 +45,7 @@ const brands = [
         badge: "최신 제품",
         badgeType: "new",
         name: "Own SI",
+        nameKo: "오운 SI",
         image: "/images/brands/products/oticon-own-si.png",
         desc: "딥러닝 AI 기술이 탑재된 오티콘의 최신 초소형 귓속형 보청기로 선명한 사운드를 제공합니다.",
         features: ["딥러닝 AI 기반 청취 지원", "전방향 선명한 사운드 처리", "초소형 IIC 디자인"],
@@ -51,6 +54,7 @@ const brands = [
         badge: "정부지원 모델",
         badgeType: "gov",
         name: "More",
+        nameKo: "모어",
         image: "/images/brands/products/oticon-more.png",
         desc: "말소리 이해도를 획기적으로 높인 정부지원 모델로 다양한 환경에서 뛰어난 청취 성능을 발휘합니다.",
         features: ["말소리 이해도 최대 15% 향상", "지능형 사운드 씬 분석", "전용 앱을 통한 손쉬운 관리"],
@@ -70,6 +74,7 @@ const brands = [
         badge: "최신 제품",
         badgeType: "new",
         name: "Infinio Ultra",
+        nameKo: "인피니오 울트라",
         image: "/images/brands/products/phonak-infinio.png",
         desc: "AI 기반 사운드 처리 기술로 복잡한 환경에서도 또렷한 말소리를 전달하는 포낙의 최신 플래그십 모델입니다.",
         features: ["AI 사운드 처리 엔진 탑재", "소음 속에서도 또렷한 말소리", "Bluetooth 무선 연결 지원"],
@@ -78,6 +83,7 @@ const brands = [
         badge: "정부지원 모델",
         badgeType: "gov",
         name: "Audeo Paradise",
+        nameKo: "오데오 파라다이스",
         image: "/images/brands/products/phonak-paradise.png",
         desc: "탁월한 말소리 이해도와 편안한 착용감으로 일상생활의 모든 순간을 풍요롭게 만드는 정부지원 모델입니다.",
         features: ["말소리 이해도 및 청취 편안함 향상", "적응형 노이즈 캔슬링 기능", "멀티포인트 무선 연결 지원"],
@@ -97,6 +103,7 @@ const brands = [
         badge: "최신 제품",
         badgeType: "new",
         name: "Envision",
+        nameKo: "인비전",
         image: "/images/brands/products/beltone-envision.png",
         desc: "다양한 컬러 옵션과 직관적인 탭 컨트롤을 갖춘 벨톤의 최신 스타일리시 보청기 모델입니다.",
         features: ["풍부한 컬러 옵션 및 스타일리시 디자인", "이어팁 더블 탭으로 간편한 컨트롤", "핸즈프리 통화 및 스트리밍"],
@@ -105,6 +112,7 @@ const brands = [
         badge: "정부지원 모델",
         badgeType: "gov",
         name: "Serene",
+        nameKo: "세린",
         image: "/images/brands/products/beltone-serene.png",
         desc: "방수 설계와 CROS/BiCROS 기능을 갖춰 단측성 난청자도 사용 가능한 정부지원 모델입니다.",
         features: ["IP68 등급 방수·방진 설계", "CROS/BiCROS 지원 (단측성 난청)", "무선 연결 및 앱 제어"],
@@ -124,6 +132,7 @@ const brands = [
         badge: "최신 제품",
         badgeType: "new",
         name: "Allure",
+        nameKo: "얼루어",
         image: "/images/brands/products/widex-allure.png",
         desc: "퓨어사운드 기술로 음악과 자연음을 왜곡 없이 전달하는 와이덱스의 최신 플래그십 보청기입니다.",
         features: ["퓨어사운드(PureSound) 기술 탑재", "자연스러운 말소리 전달 최적화", "착용자 환경 자동 감지 및 조정"],
@@ -132,6 +141,7 @@ const brands = [
         badge: "정부지원 모델",
         badgeType: "gov",
         name: "Magnify",
+        nameKo: "매그니파이",
         image: "/images/brands/products/widex-magnify.png",
         desc: "머신러닝 기반 맞춤 사운드 조정으로 착용자에게 최적화된 청취 환경을 제공하는 정부지원 모델입니다.",
         features: ["머신러닝 기반 맞춤 사운드 조정", "착용자 선호도 자동 최적화 학습", "무선 연결 및 원격 피팅 지원"],
@@ -270,9 +280,12 @@ export default function BrandsPage() {
 
                     {/* Product Info */}
                     <div className="px-6 pb-6 pt-4">
-                      <h3 className="text-xl font-extrabold text-gray-900 mb-2">
+                      <h3 className="text-xl font-extrabold text-gray-900 mb-1">
                         {product.name}
                       </h3>
+                      {product.nameKo && (
+                        <p className="text-[14px] text-gray-400 font-medium mb-2">{product.nameKo}</p>
+                      )}
                       <p className="text-[14px] text-gray-500 leading-relaxed mb-4">
                         {product.desc}
                       </p>

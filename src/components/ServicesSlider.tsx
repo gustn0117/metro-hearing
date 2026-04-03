@@ -101,6 +101,7 @@ export default function ServicesSlider() {
   };
 
   const slideWidth = isMobile ? 100 : 50;
+  const gapPx = isMobile ? 16 : 24;
 
   return (
     <div
@@ -119,8 +120,8 @@ export default function ServicesSlider() {
         <div
           className="slider-track flex"
           style={{
-            transform: `translateX(-${idx * slideWidth}%)`,
-            gap: "1.5rem",
+            transform: `translateX(calc(-${idx * slideWidth}% - ${idx * gapPx}px))`,
+            gap: `${gapPx}px`,
           }}
         >
           {services.map((s) => (
@@ -128,7 +129,7 @@ export default function ServicesSlider() {
               key={s.num}
               className="group relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100/60 hover:border-[var(--color-primary)]/10"
               style={{
-                minWidth: `calc(${slideWidth}% - ${isMobile ? "0px" : "12px"})`,
+                minWidth: `${slideWidth}%`,
                 flexShrink: 0,
               }}
             >

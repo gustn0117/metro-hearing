@@ -123,7 +123,7 @@ export default function Home() {
               },
               {
                 icon: <svg width="30" height="30" fill="none" stroke="white" strokeWidth="1.8" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
-                title: "청능사·청각사 상시 상주",
+                title: "청능사·청각사 상담",
                 text: "자격을 갖춘 전문 인력이 상담부터 사후관리까지 직접 담당",
                 color: "from-[var(--color-accent)] to-[#4fc3f7]",
                 accent: "var(--color-accent)",
@@ -154,44 +154,51 @@ export default function Home() {
       </section>
 
       {/* 멀티 브랜드 강조 */}
-      <section className="py-32 max-md:py-22 bg-[var(--color-bg-dark)] relative overflow-hidden">
-        {/* Background image */}
-        <div className="absolute inset-0">
-          <Image src="/images/main/multi1.jpg" alt="" fill className="object-cover opacity-[.07]" />
-        </div>
-        {/* Radial gradient overlay */}
-        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 50% 30%, rgba(11,83,148,.15), transparent 70%)" }} />
-        {/* Grid pattern overlay */}
-        <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
+      <section className="py-28 max-md:py-18 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        {/* Subtle decorative elements */}
+        <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[var(--color-primary)]/[.03] rounded-full blur-3xl -translate-x-1/3 -translate-y-1/3" />
+        <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-[var(--color-gold)]/[.04] rounded-full blur-3xl translate-x-1/4 translate-y-1/4" />
 
         <div className="max-w-[1200px] mx-auto px-6 relative z-10 text-center">
           <FadeUp>
-            <span className="inline-flex items-center gap-2.5 text-sm font-semibold text-white/80 bg-white/[.06] backdrop-blur-sm px-6 py-2.5 rounded-full mb-6 border border-white/[.08]">
-              <svg width="14" height="14" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              Global Brands
-            </span>
-            <h2 className="text-[2.5rem] max-md:text-[26px] font-extrabold text-white mb-5">
-              글로벌 보청기 <span className="text-[var(--color-gold)]">비교 전문센터</span>
+            <span className="section-label">Global Brands</span>
+            <h2 className="text-[2.5rem] max-md:text-[26px] font-extrabold mb-5">
+              글로벌 보청기 <span className="gradient-text">비교 전문센터</span>
             </h2>
-            <p className="text-[16px] text-white/50 max-w-[680px] mx-auto mb-16 leading-relaxed">
+            <div className="section-divider mx-auto mb-5" />
+            <p className="text-[16px] text-gray-400 max-w-[680px] mx-auto mb-16 leading-relaxed">
               보청기 브랜드마다 제공하는 기능과 음질이 다르기에<br className="max-md:hidden"/> 자신에게 적합한 제품을 찾는 과정이 중요합니다.<br />세계 주요 브랜드를 한 자리에서 비교 체험하세요.
             </p>
           </FadeUp>
-          <div className="flex justify-center items-center gap-5 max-lg:gap-3 flex-wrap stagger-children">
-            {[
-              { name: "시그니아", logo: "/images/brands/signia.png", id: "signia" },
-              { name: "오티콘", logo: "/images/brands/oticon.png", id: "oticon" },
-              { name: "포낙", logo: "/images/brands/phonak.png", id: "phonak" },
-              { name: "벨톤", logo: "/images/brands/beltone.png", id: "beltone" },
-              { name: "와이덱스", logo: "/images/brands/widex.png", id: "widex" },
-            ].map((b) => (
-              <FadeUp key={b.id}>
-                <Link href={`/brands#${b.id}`} className="brand-glow group flex flex-col items-center gap-4 px-10 py-7 max-md:px-6 max-md:py-5 rounded-2xl bg-white/[.04] backdrop-blur-md border border-white/[.06] hover:bg-white/[.1] hover:border-white/[.15] hover:-translate-y-2 transition-all duration-400">
-                  <Image src={b.logo} alt={b.name} width={120} height={50} className="h-[48px] w-auto opacity-70 group-hover:opacity-100 transition-all duration-300" />
-                  <span className="text-[13px] text-white/30 group-hover:text-white/70 transition-colors font-medium tracking-wide">{b.name}</span>
-                </Link>
-              </FadeUp>
-            ))}
+          {/* 3+2 layout: first row 3, second row 2 centered */}
+          <div className="stagger-children">
+            <div className="grid grid-cols-3 max-md:grid-cols-2 gap-5 max-md:gap-3 mb-5 max-md:mb-3">
+              {[
+                { name: "시그니아", logo: "/images/brands/signia.png", id: "signia" },
+                { name: "오티콘", logo: "/images/brands/oticon.png", id: "oticon" },
+                { name: "포낙", logo: "/images/brands/phonak.png", id: "phonak" },
+              ].map((b) => (
+                <FadeUp key={b.id}>
+                  <Link href={`/brands#${b.id}`} className="group flex flex-col items-center gap-4 px-8 py-8 max-md:px-5 max-md:py-6 rounded-2xl bg-white border border-gray-100 hover:border-[var(--color-primary)]/15 hover:-translate-y-2 hover:shadow-xl transition-all duration-400">
+                    <Image src={b.logo} alt={b.name} width={130} height={55} className="h-[50px] max-md:h-[40px] w-auto opacity-80 group-hover:opacity-100 transition-all duration-300" />
+                    <span className="text-[13px] text-gray-400 group-hover:text-[var(--color-primary)] transition-colors font-semibold tracking-wide">{b.name}</span>
+                  </Link>
+                </FadeUp>
+              ))}
+            </div>
+            <div className="grid grid-cols-2 max-md:grid-cols-2 gap-5 max-md:gap-3 max-w-[66%] max-md:max-w-full mx-auto">
+              {[
+                { name: "벨톤", logo: "/images/brands/beltone.png", id: "beltone" },
+                { name: "와이덱스", logo: "/images/brands/widex.png", id: "widex" },
+              ].map((b) => (
+                <FadeUp key={b.id}>
+                  <Link href={`/brands#${b.id}`} className="group flex flex-col items-center gap-4 px-8 py-8 max-md:px-5 max-md:py-6 rounded-2xl bg-white border border-gray-100 hover:border-[var(--color-primary)]/15 hover:-translate-y-2 hover:shadow-xl transition-all duration-400">
+                    <Image src={b.logo} alt={b.name} width={130} height={55} className="h-[50px] max-md:h-[40px] w-auto opacity-80 group-hover:opacity-100 transition-all duration-300" />
+                    <span className="text-[13px] text-gray-400 group-hover:text-[var(--color-primary)] transition-colors font-semibold tracking-wide">{b.name}</span>
+                  </Link>
+                </FadeUp>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -247,7 +254,7 @@ export default function Home() {
 
             <FadeUp className="flex-1 w-full">
               <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/[.08] ring-1 ring-white/5">
-                <iframe src="https://www.google.com/maps?q=대구+중구+달구벌대로+2109-18+흥국생명빌딩&output=embed" className="w-full h-[400px] border-0" allowFullScreen loading="lazy"></iframe>
+                <iframe src="https://map.naver.com/p/search/%EB%8C%80%EA%B5%AC%20%EC%A4%91%EA%B5%AC%20%EB%8B%AC%EA%B5%AC%EB%B2%8C%EB%8C%80%EB%A1%9C%202109-18" className="w-full h-[400px] border-0" allowFullScreen loading="lazy"></iframe>
               </div>
               <div className="flex items-start gap-3 mt-6 text-white/60 text-sm">
                 <svg width="18" height="18" fill="none" stroke="var(--color-gold)" strokeWidth="2" viewBox="0 0 24 24" className="flex-shrink-0 mt-0.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>

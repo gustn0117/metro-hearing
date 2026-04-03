@@ -250,7 +250,7 @@ export default function CenterPage() {
               {/* Map */}
               <div className="rounded-2xl overflow-hidden shadow-lg">
                 <iframe
-                  src="https://www.google.com/maps?q=대구+중구+달구벌대로+2109-18+흥국생명빌딩&output=embed"
+                  src="https://map.naver.com/p/search/%EB%8C%80%EA%B5%AC%20%EC%A4%91%EA%B5%AC%20%EB%8B%AC%EA%B5%AC%EB%B2%8C%EB%8C%80%EB%A1%9C%202109-18"
                   className="w-full h-[420px] border-0"
                   allowFullScreen
                   loading="lazy"
