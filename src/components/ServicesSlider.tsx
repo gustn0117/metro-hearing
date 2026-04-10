@@ -101,7 +101,7 @@ export default function ServicesSlider() {
   };
 
   const slideWidth = isMobile ? 100 : 50;
-  const gapPx = isMobile ? 16 : 24;
+  const gapPx = 24;
 
   return (
     <div
@@ -110,7 +110,7 @@ export default function ServicesSlider() {
     >
       {/* Slider viewport */}
       <div
-        className="overflow-hidden rounded-2xl"
+        className="overflow-hidden"
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
@@ -127,85 +127,78 @@ export default function ServicesSlider() {
           {services.map((s) => (
             <div
               key={s.num}
-              className="group relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100/60 hover:border-[var(--color-primary)]/10"
+              className="group bg-white rounded-xl overflow-hidden shadow-[0_2px_20px_rgba(0,0,0,.08)] hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(0,0,0,.12)] transition-all duration-300"
               style={{
-                minWidth: `${slideWidth}%`,
+                minWidth: isMobile ? "100%" : `calc(50% - 12px)`,
                 flexShrink: 0,
               }}
             >
-              {/* Image */}
-              <div className="relative h-[250px] overflow-hidden">
+              {/* Image - 280px matching static site */}
+              <div className="relative h-[280px] max-md:h-[220px] overflow-hidden">
                 <Image
                   src={s.img}
                   alt={s.title}
                   width={600}
-                  height={250}
-                  className="w-full h-full object-cover img-zoom"
+                  height={280}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
-                {/* Step number overlay */}
-                <div className="absolute top-5 left-5">
-                  <span
-                    className="inline-flex items-center justify-center w-11 h-11 rounded-xl text-white text-sm font-bold shadow-lg backdrop-blur-sm border border-white/10"
-                    style={{
-                      background: "linear-gradient(135deg, var(--color-primary), var(--color-accent))",
-                    }}
-                  >
-                    {String(s.num).padStart(2, "0")}
-                  </span>
-                </div>
               </div>
 
-              {/* Content */}
-              <div className="p-7 max-md:p-5">
-                <span className="text-[11px] font-bold tracking-[.2em] uppercase text-[var(--color-primary)]/50 mb-3 block">
-                  Step {String(s.num).padStart(2, "0")}
+              {/* Content - 28px 32px matching static site */}
+              <div className="px-8 py-7 max-md:px-5 max-md:py-5">
+                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[var(--color-primary)] text-white text-sm font-bold mb-3">
+                  {s.num}
                 </span>
-                <h3 className="text-[1.1rem] font-bold mb-2.5 text-gray-900 leading-snug group-hover:text-[var(--color-primary)] transition-colors">
+                <h3 className="text-xl max-md:text-lg font-bold mb-2.5 text-gray-800">
                   {s.title}
                 </h3>
-                <p className="text-[14px] text-gray-400 leading-relaxed">
+                <p className="text-[15px] text-gray-500 leading-[1.7]">
                   {s.text}
                 </p>
               </div>
-
-              {/* Bottom accent line on hover */}
-              <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
             </div>
           ))}
         </div>
       </div>
 
-      {/* Controls row */}
-      <div className="flex items-center justify-center gap-6 mt-10">
-        {/* Prev button */}
-        <button
-          onClick={() => goTo(idx - 1)}
-          aria-label="이전"
-          className="w-11 h-11 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[var(--color-primary)] hover:text-white transition-all duration-300 hover:scale-110 border border-gray-100 hover:border-transparent"
-        >
-          <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
-        </button>
-
-        {/* Progress dots */}
-        <div className="flex items-center gap-2.5">
+      {/* Controls */}
+      <div className="flex flex-col items-center gap-5 mt-8">
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => goTo(idx - 1)}
+            aria-label="이전"
+            className="w-11 h-11 rounded-full bg-[var(--color-primary-light)] text-[var(--color-primary)] flex items-center justify-center text-lg hover:bg-[var(--color-primary)] hover:text-white transition-all duration-300"
+          >
+            &#10094;
+          </button>
+          <button
+            onClick={() => goTo(idx + 1)}
+            aria-label="다음"
+            className="w-11 h-11 rounded-full bg-[var(--color-primary-light)] text-[var(--color-primary)] flex items-center justify-center text-lg hover:bg-[var(--color-primary)] hover:text-white transition-all duration-300"
+          >
+            &#10095;
+          </button>
+        </div>
+        {/* Dots */}
+        <div className="flex items-center gap-2">
           {Array.from({ length: maxIdx + 1 }, (_, i) => (
             <button
               key={i}
               onClick={() => goTo(i)}
               aria-label={`슬라이드 ${i + 1}`}
-              className="relative h-2 rounded-full overflow-hidden transition-all duration-400"
+              className="relative rounded-full overflow-hidden transition-all duration-300"
               style={{
-                width: idx === i ? 36 : 8,
-                backgroundColor: idx === i ? "transparent" : "#e5e7eb",
+                width: idx === i ? 30 : 10,
+                height: 10,
+                backgroundColor: idx === i ? "transparent" : "#e0e0e0",
+                cursor: "pointer",
               }}
             >
               {idx === i && (
                 <>
                   <span
                     className="absolute inset-0 rounded-full"
-                    style={{ backgroundColor: "var(--color-primary)", opacity: 0.15 }}
+                    style={{ backgroundColor: "var(--color-primary)", opacity: 0.25 }}
                   />
                   <span
                     className="absolute inset-y-0 left-0 rounded-full"
@@ -220,15 +213,6 @@ export default function ServicesSlider() {
             </button>
           ))}
         </div>
-
-        {/* Next button */}
-        <button
-          onClick={() => goTo(idx + 1)}
-          aria-label="다음"
-          className="w-11 h-11 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[var(--color-primary)] hover:text-white transition-all duration-300 hover:scale-110 border border-gray-100 hover:border-transparent"
-        >
-          <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
-        </button>
       </div>
     </div>
   );
